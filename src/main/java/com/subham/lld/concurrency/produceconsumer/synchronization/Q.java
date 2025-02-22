@@ -1,4 +1,4 @@
-package com.subham.lld.concurrency.prodcons;
+package com.subham.lld.concurrency.produceconsumer.synchronization;
 
 
 /**
