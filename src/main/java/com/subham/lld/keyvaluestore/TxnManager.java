@@ -20,6 +20,8 @@ public class TxnManager<K,V> {
         Txn<K,V> txn = currentTxn.get();
         if(Objects.nonNull(txn)) {
             txn.put(key, value);
+        } else {
+            kvStore.put(key, value);
         }
     }
 
@@ -27,6 +29,8 @@ public class TxnManager<K,V> {
         Txn<K,V> txn = currentTxn.get();
         if(Objects.nonNull(txn)) {
             txn.delete(key);
+        } else {
+            kvStore.delete(key);
         }
     }
 
