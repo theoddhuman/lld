@@ -30,7 +30,7 @@ public class BookReservationRepository {
 
 
     /**
-     * remove reservation from current status and add to new status
+     * removeFromQueue reservation from current status and add to new status
      */
     public boolean updateReservationStatus(BookReservation bookReservation, ReservationStatus status) {
         Map<ReservationStatus, List<BookReservation>> bookReservationMap = bookReservationCatalog.get(bookReservation.getBookId());

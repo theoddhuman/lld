@@ -23,7 +23,7 @@ public interface ParkingSystemService {
     boolean updateStatusParkingSpot(long parkingSpotId, ParkingSpotStatus status);
 
     /**
-     * Assign parking spot to a vehicle, mark the parking spot as occupied and remove from availability matrix
+     * Assign parking spot to a vehicle, mark the parking spot as occupied and removeFromQueue from availability matrix
      */
     boolean assignParkingSpot(ParkingAvailability parkingAvailability, Vehicle vehicle);
 

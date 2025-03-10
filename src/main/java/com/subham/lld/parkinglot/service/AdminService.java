@@ -33,7 +33,7 @@ public interface AdminService {
     void addParkingFloor(long adminId, ParkingFloor parkingFloor);
 
     /**
-     * remove parking floor
+     * removeFromQueue parking floor
      */
     void removeParkingFloor(long adminId, long parkingFloorId);
 
