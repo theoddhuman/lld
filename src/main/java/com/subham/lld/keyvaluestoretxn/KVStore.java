@@ -1,8 +1,15 @@
-package com.subham.lld.keyvaluestore;
+package com.subham.lld.keyvaluestoretxn;
 
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * Storage for key - value pair
+ *
+ * @param <K> type key
+ * @param <V> type value
+ */
 public class KVStore<K, V> {
     private final Map<K, V> keyValueMap;
 
