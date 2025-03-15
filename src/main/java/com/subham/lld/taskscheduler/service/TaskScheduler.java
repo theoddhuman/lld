@@ -18,11 +18,13 @@ public class TaskScheduler {
         this.threads = new ArrayList<>();
         for(int i=0; i<threadCount; i++) {
             TaskRunner taskRunner = new TaskRunner(taskService);
-            Thread thread = new Thread(taskRunner);
             taskRunners.add(taskRunner);
-            threads.add(thread);
-            thread.start();
+            threads.add(new Thread(taskRunner));
         }
+    }
+
+    public void start() {
+        threads.forEach(Thread::start);
     }
 
     public void stop() {

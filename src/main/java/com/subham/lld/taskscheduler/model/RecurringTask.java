@@ -1,7 +1,5 @@
-package com.subham.lld.taskscheduler;
+package com.subham.lld.taskscheduler.model;
 
-
-import java.util.Optional;
 
 /**
  * Author: the_odd_human

@@ -1,7 +1,7 @@
 package com.subham.lld.taskscheduler.service;
 
 
-import com.subham.lld.taskscheduler.ScheduledTask;
+import com.subham.lld.taskscheduler.model.ScheduledTask;
 
 /**
  * Author: the_odd_human
@@ -46,6 +46,4 @@ public class TaskRunner implements Runnable {
             notify();
         }
     }
-
-
 }

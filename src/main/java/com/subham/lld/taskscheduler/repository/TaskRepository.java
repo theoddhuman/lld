@@ -1,7 +1,7 @@
 package com.subham.lld.taskscheduler.repository;
 
 
-import com.subham.lld.taskscheduler.ScheduledTask;
+import com.subham.lld.taskscheduler.model.ScheduledTask;
 
 import java.util.Comparator;
 import java.util.LinkedHashMap;
@@ -14,13 +14,21 @@ import java.util.concurrent.atomic.AtomicLong;
  * Date: 18/02/25
  */
 public class TaskRepository {
-    private static Map<Long, ScheduledTask> tasks;
-    private static PriorityQueue<Long> taskQueue;
-    private static final AtomicLong ID = new AtomicLong(0);
+    private final Map<Long, ScheduledTask> tasks;
+    private final PriorityQueue<Long> taskQueue;
+    private final AtomicLong ID = new AtomicLong(0);
 
-    public TaskRepository() {
+    private TaskRepository() {
         tasks = new LinkedHashMap<>();
         taskQueue = new PriorityQueue<>(Comparator.comparingLong(id -> tasks.get(id).getNextExecutionTime()));
+    }
+
+    private static final class InstanceHolder {
+        private static final TaskRepository INSTANCE = new TaskRepository();
+    }
+
+    public static TaskRepository getInstance() {
+        return InstanceHolder.INSTANCE;
     }
 
     public void addTask(ScheduledTask task) {

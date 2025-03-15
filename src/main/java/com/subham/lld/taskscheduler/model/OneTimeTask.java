@@ -1,4 +1,4 @@
-package com.subham.lld.taskscheduler;
+package com.subham.lld.taskscheduler.model;
 
 
 /**
@@ -6,7 +6,7 @@ package com.subham.lld.taskscheduler;
  * Date: 18/02/25
  */
 public class OneTimeTask extends ScheduledTask {
-    private long executionTime;
+    private final long executionTime;
 
     public OneTimeTask(ExecutionContext executionContext, long executionTime) {
         super(executionContext);
