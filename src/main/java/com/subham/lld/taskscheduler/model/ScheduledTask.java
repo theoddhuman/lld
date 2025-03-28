@@ -11,7 +11,7 @@ import lombok.Setter;
 public abstract class ScheduledTask {
     @Setter
     @Getter
-    private long id;
+    private Long id;
     final ExecutionContext executionContext;
 
     public ScheduledTask(ExecutionContext executionContext) {
